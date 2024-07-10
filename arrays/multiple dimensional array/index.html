@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>multiple dimensional array</title>
+</head>
+<body>
+  <script>
+
+    let data = [
+      ["ali","ali@gmail.com","DHA"],
+      ["aisha","aisha@gmail.com","Malir"],
+      ["iqra","iqra@gmail.com","Malir15"],
+      ["fizza","fizza@gmail.com","Defence"],
+      ["muhib","muhib@gmail.com","Korangi"]
+    ]
+
+    // document.write(data[3][1]);
+    // document.write(data[1][2],data[0][1],data[2][0],data[4][2]);
+
+    // for(let value1 of data){
+    //   // document.write(value1[0]+"<br>");
+    //   document.write(value1+"<br>");
+    // }
+    
+
+    for(let value of data){
+      // document.write(value);
+      for(let data1 of value){
+        document.write(data1 + "<br>");
+      }
+    }
+
+  </script>
+</body>
+</html>

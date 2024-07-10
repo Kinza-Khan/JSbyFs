@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register Form</title>
+</head>
+<body>
+  <!-- local storage and session storage code -->
+
+
+
+  <!-- html form -->
+
+  <form action="">
+
+    <label for="">NAME: </label>
+    <input type="text" id="name" placeholder="Enter your name" required>
+
+    <br>
+    <br>
+
+    <label for="">EMAIL: </label>
+    <input type="email" id="mail" placeholder="Enter your email" required>
+
+    <br>
+    <br>
+
+    <label for="">PASSWORD: </label>
+    <input type="password" id="pass" placeholder="Enter your password" required>
+
+    <br>
+    <br>
+
+    <input type="checkbox" name="" id="" onclick="showpassword()"> Show Password
+
+    <br>
+    <br>
+
+    <label for="">Retype Password: </label>
+    <input type="password" id="repass" placeholder="Enter your retype password" required>
+
+    <br>
+    <br>
+
+    <button type="button" onclick="register()">Register</button>
+
+  </form>
+
+
+  <script>
+  
+  function showpassword(){
+      
+      let password = document.getElementById("pass");
+
+      if(password.type == "password"){
+        password.type = "text"
+      }
+      else{
+        password.type = "password"
+      }
+    }
+
+
+
+    function register(){
+
+      let name = document.getElementById("name")
+      let email = document.getElementById("mail")
+      let password = document.getElementById("pass")
+      let retype = document.getElementById("repass")
+
+
+
+      var error = "";
+
+      if(error==""){
+
+        if(email.value == "fasahat@gmail.com" && password.value == 12345 && retype.value == 12345){
+          localStorage.setItem("Email",email.value);
+          localStorage.setItem("Password",password.value);
+          localStorage.setItem("RetypeP",retype.value);
+
+          location.assign('login.html');
+        }
+
+        else if(email.value != "fasahat@gmail.com" && password.value == 12345 && retype.value == 12345){
+          alert("Invalid Email")
+        }
+
+        else if(email.value == "fasahat@gmail.com" && password.value != 12345 && retype.value == 12345){
+          alert("Invalid Pssword")
+        }
+        
+        else if(email.value == "fasahat@gmail.com" && password.value == 12345 && retype.value != 12345){
+          alert("Invalid Retype Password")
+        }
+
+        else{
+          alert("Invalid Data")
+        }
+      }
+
+      
+
+}
+
+
+  </script>
+
+
+
+</body>
+</html>
